@@ -1,0 +1,112 @@
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4); /* Soft pastel gradient */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px; /* Prevent overflow due to small screen */
+}
+
+/* Main game container */
+#game-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Ensure full width for responsiveness */
+    max-width: 380px; /* Maximum width for the game container */
+    text-align: center;
+    border: 3px solid #ff6347;
+}
+
+/* Title styling */
+h1 {
+    font-size: 36px;
+    color: #4d4d4d;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Grid layout */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Ensure grid columns are flexible */
+    grid-template-rows: repeat(5, 1fr); /* Ensure grid rows are flexible */
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure grid takes up the full container width */
+}
+
+/* Each square styling */
+.square {
+    width: 100%; /* Ensure squares are responsive and take the full width of the grid cell */
+    height: 0;
+    padding-bottom: 100%; /* Aspect ratio of 1:1 to make the squares square */
+    background-color: #e5e5e5;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Square "on" state */
+.square.on {
+    background-color: #ff6347; /* Tomato red when on */
+    border: 2px solid #d84315;
+}
+
+/* Hover effect for squares */
+.square:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer and last updated styling */
+footer {
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+footer span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive design: mobile-friendly */
+@media (max-width: 600px) {
+    #game-container {
+        max-width: 90%; /* Ensure container doesn't overflow */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    /* Adjust grid layout for smaller screens */
+    #grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .square {
+        width: 100%; /* Ensure squares are responsive */
+        padding-bottom: 100%; /* Maintain square aspect ratio */
+    }
+}

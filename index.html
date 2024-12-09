@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Lights Out</h1>
+        <div id="grid"></div>
+        <footer>
+            <p>Last updated: <span id="lastModified"></span></p>
+        </footer>
+    </div>
+
+    <div id="addendum-container">
+        <h2>Development Process & Insights</h2>
+        <p><strong>1. Process:</strong> The development of the "Lights Out" game involved breaking down the logic of the game into manageable components. I started by creating the grid layout, then developed the game logic where each click toggles the state of the square and its neighbors. Finally, I implemented the win condition, which checks if all the squares are in the "off" state.</p>
+        <p><strong>2. Creative Choices:</strong> For the design, I chose a soft pastel color palette to create a relaxing and user-friendly environment. The grid layout was designed to be flexible, with responsive behavior for mobile devices. The interaction design includes hover effects and smooth transitions for better user feedback.</p>
+        <p><strong>3. Challenges Faced:</strong> One major challenge was ensuring that the grid was responsive, especially when the screen size changed. At first, the squares would overflow on smaller screens, but by using percentage-based widths and maintaining the square aspect ratio with padding, I was able to make the game fit well on all devices.</p>
+        <p><strong>4. Overcoming Challenges:</strong> I addressed the responsiveness issue by using CSS grid and the `fr` unit for the grid columns and rows, allowing the grid to adjust its size dynamically based on the container. The aspect ratio of the squares was maintained using a `padding-bottom` technique, which helped in making sure the squares are always square-shaped.</p>
+        <p><strong>5. Insights Gained:</strong> I gained a deeper understanding of CSS grid layouts and responsive design. I also learned how to manage user interactions in JavaScript more effectively, especially when it comes to toggling states and checking win conditions in puzzle games.</p>
+    </div>
+
+    <script src="game.js"></script>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
